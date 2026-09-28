@@ -11,6 +11,8 @@ $(PKG)_DEPS     := cc aom
 define $(PKG)_BUILD
     $(eval export CFLAGS += -O3)
     $(eval export CXXFLAGS += -O3)
+    # FindLIBDE265.cmake does not propagate the static-library definition.
+    $(if $(BUILD_STATIC),$(eval export CXXFLAGS += -DLIBDE265_STATIC_BUILD))
 
     cd '$(BUILD_DIR)' && $(TARGET)-cmake \
         -DENABLE_PLUGIN_LOADING=0 \
