@@ -2,6 +2,13 @@ $(info [overrides]   $(lastword $(MAKEFILE_LIST)))
 
 ## Update dependencies
 
+expat_VERSION  := 2.9.0
+expat_CHECKSUM := 1e6371862cc31999b368c3b89b49994f0677e1bab5f1b2b85ae3741f5d803051
+expat_SUBDIR   := expat-$(expat_VERSION)
+expat_FILE     := expat-$(expat_VERSION).tar.xz
+expat_URL      := https://$(SOURCEFORGE_MIRROR)/project/expat/expat/$(expat_VERSION)/$(expat_FILE)
+expat_URL_2    := https://github.com/libexpat/libexpat/releases/download/R_$(subst .,_,$(expat_VERSION))/$(expat_FILE)
+
 # upstream version is 3.7.1
 libffi_VERSION  := 3.8.0
 libffi_CHECKSUM := 7da3e2d9a171eb0a038f592ecad3ff2bb2550f3496d87b3b29ad0cf4430c0db4
