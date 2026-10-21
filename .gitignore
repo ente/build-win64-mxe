@@ -1,5 +1,6 @@
 # Build output
 *.zip
+output/
 
 # VIM swap files
 .*.swp
